@@ -1,5 +1,6 @@
 function features = Feature_Extraction(filename,bool)
 [y,Fs]=audioread(filename);
+y=y(:,1);
 window_length=ceil(Fs/20);
 window=floor(size(y,1)/window_length);
 mfccParams = feature_mfccs_init(window_length, Fs);
