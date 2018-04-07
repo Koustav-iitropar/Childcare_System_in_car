@@ -18,7 +18,7 @@ function mfccParams = feature_mfccs_init(windowLength, fs)
 mfccParams.cepstralCoefficients = 13;
 
 % fft resolution:
-mfccParams.fftSize = round(windowLength / 2);
+mfccParams.fftSize = round(windowLength);
 % filter parameters:
 mfccParams.lowestFrequency = 133.3333;
 mfccParams.linearFilters = 13;
