@@ -1,4 +1,4 @@
-function features = Feature_Extraction(filename)
+function features = Feature_Extraction(filename,bool)
 [y,Fs]=audioread(filename);
 window_length=ceil(Fs/20);
 window=floor(size(y,1)/window_length);
@@ -15,7 +15,7 @@ for i=1:20:window
         [H,F] = feature_harmonic(x, Fs);
     data=[data ceps E H F];
     end
-    data=[data 1];
+    data=[data bool];
     features=[features;data];
     
 end
