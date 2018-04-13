@@ -10,6 +10,7 @@ for i=1:20:window
     data=zeros(0,0);
     for j=i:i+19
     x= y( (j-1)*window_length+1: (j)*window_length,:);
+    
     ceps = feature_mfccs(fft(x), mfccParams );
     ceps=abs(ceps)';
     E=feature_energy(x);
