@@ -14,8 +14,8 @@ for i=1:20:window
     ceps=abs(ceps)';
     E=feature_energy(x);
     [H,F] = feature_harmonic(x, Fs);
-    hf = harmonicity_factor( x, F );
-    data=[data ceps E H F];
+    hf = harmonicity_factor(x,F);
+    data=[data ceps E H F hf];
     end
     data=[data bool];
     features=[features;data];
